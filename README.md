@@ -1,2 +1,2 @@
-# Peramalan-Suhu-Permukaan-Darat-di-Wilayah-Riau-Menggunakan-Data-Satelit-MODIS-dengan-Metode-SARIMA
+# Forecasting Land Surface Temperature in the Riau Region Using MODIS Satellite Data and the SARIMA Method
 Global climate change raises concerns over land surface temperature (LST) monitoring as a key climate indicator. This study forecasts LST in Riau using MODIS data and the SARIMA model, integrating confidence intervals for uncertainty. An interactive visualization system aids stakeholders in climate adaptation strategies.
