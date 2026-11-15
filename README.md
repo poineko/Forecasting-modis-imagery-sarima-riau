@@ -9,7 +9,11 @@
 
 Sistem analitik geospasial *end-to-end* dan *dashboard* web interaktif untuk memodelkan serta meramalkan tren **Suhu Permukaan Darat (*Land Surface Temperature* / LST)** pada **12 kabupaten/kota di Provinsi Riau** menggunakan arsip citra satelit **NASA MODIS** (2000–2020) dan pemodelan deret waktu **SARIMA (*Seasonal Autoregressive Integrated Moving Average*)**.
 
-<video src="https://github.com/poineko/Forecasting-modis-imagery-sarima-riau/blob/master/demo-sarima.mp4?raw=true" controls width="100%"></video>
+## Demo Sistem
+
+> **Video Demo Lengkap (2 Menit):** Simulasi alur kerja aplikasi mulai dari pemilihan wilayah di Riau, uji stasioneritas ADF, identifikasi ACF/PACF, estimasi & diagnostik SARIMA, hingga visualisasi peramalan multi-tahun tersedia pada repositori ini:
+>
+> **[Tonton / Unduh Video Demo (`demo-sarima.mp4`)](https://github.com/poineko/Forecasting-modis-imagery-sarima-riau/blob/master/demo-sarima.mp4)**
 ---
 
 ## Daftar Isi
