@@ -6,7 +6,7 @@
 ![NASA MODIS](https://img.shields.io/badge/Dataset-NASA_MODIS_MOD11C3-EA580C)
 ![Accuracy](https://img.shields.io/badge/Test_MAPE-%3C_3%25_(Sangat_Akurat)-16A34A)
 
-<video src="https://raw.githubusercontent.com/poineko/Forecasting-modis-imagery-sarima-riau/master/assets/demo sistem peramalan suhu permukaan darat.mp4" controls="controls" style="max-width: 100%;"></video>
+<video src="https://raw.githubusercontent.com/poineko/Forecasting-modis-imagery-sarima-riau/master/demo sistem peramalan suhu permukaan darat.mp4" controls="controls" style="max-width: 100%;"></video>
 
 Sistem analitik geospasial *end-to-end* dan *dashboard* web interaktif untuk memodelkan serta meramalkan tren **Suhu Permukaan Darat (*Land Surface Temperature* / LST)** pada **12 kabupaten/kota di Provinsi Riau** menggunakan arsip citra satelit **NASA MODIS** (2000–2023) dan pemodelan deret waktu **SARIMA (*Seasonal Autoregressive Integrated Moving Average*)**.
 
