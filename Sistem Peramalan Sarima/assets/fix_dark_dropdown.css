@@ -1,0 +1,32 @@
+/* Perbaikan warna Dropdown Dash 3+ agar selaras dengan tema gelap */
+.dash-dropdown,
+.dash-dropdown-control,
+.dash-dropdown-content,
+.dash-dropdown-options,
+.dash-dropdown-option,
+[class*="dash-dropdown"] {
+    background-color: #0d2b2e !important;
+    color: #ffffff !important;
+    border-color: #1f4e52 !important;
+}
+
+.dash-dropdown-option:hover,
+.dash-dropdown-option--selected,
+[class*="dash-dropdown-option"]:hover {
+    background-color: #184a4f !important;
+    color: #ffffff !important;
+}
+
+.dash-dropdown input,
+.dash-dropdown-search {
+    background-color: #092022 !important;
+    color: #ffffff !important;
+}
+
+/* Fallback untuk komponen input/select & tabel jika ada yang putih */
+input.form-control,
+select.form-select {
+    background-color: #0d2b2e !important;
+    color: #ffffff !important;
+    border-color: #1f4e52 !important;
+}

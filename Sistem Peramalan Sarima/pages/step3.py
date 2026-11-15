@@ -1,3 +1,4 @@
+import io
 # step3.py
 
 import dash
@@ -34,7 +35,7 @@ layout = dbc.Container([
 )
 def update_acf_pacf_plots(selected_region_data, diff_order, num_lags):
     if selected_region_data:
-        data = pd.read_json(selected_region_data)
+        data = pd.read_json(io.StringIO(selected_region_data))
         data.set_index('Tanggal', inplace=True)
     else:
         return go.Figure(), go.Figure()

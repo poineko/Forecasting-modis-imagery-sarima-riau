@@ -1,3 +1,4 @@
+import io
 # step 4
 
 import dash
@@ -223,7 +224,7 @@ def estimate_parameters(n_clicks, diff_order, start_year, end_year, p1, q1, P1, 
         return "Please ensure data and parameters are loaded."
     
     try:
-        data = pd.read_json(selected_region_data)
+        data = pd.read_json(io.StringIO(selected_region_data))
     except ValueError:
         return "Error: `selected_region_data` is not in JSON format."
     
@@ -290,7 +291,7 @@ def check_diagnostics(n_clicks, start_year, end_year, diff_order, selected_regio
         return html.Div("No diagnostics available."), html.Div("")
 
     # Load data
-    data = pd.read_json(selected_region_data)
+    data = pd.read_json(io.StringIO(selected_region_data))
     data['Tanggal'] = pd.to_datetime(data['Tanggal'])
     data.set_index('Tanggal', inplace=True)
 
@@ -322,7 +323,7 @@ def check_diagnostics(n_clicks, start_year, end_year, diff_order, selected_regio
             'p-value (Ljung-Box)': f"{sm.stats.acorr_ljungbox(residuals, lags=[10], return_df=True)['lb_pvalue'].values[0]:.3f}",  # p-value with 3 decimal places
             'MAE': f"{mean_absolute_error(ts, fitted_values):.2f}",  # MAE with 2 decimal places
             'MSE': f"{mean_squared_error(ts, fitted_values):.2f}",  # MSE with 2 decimal places
-            'RMSE': f"{mean_squared_error(ts, fitted_values, squared=False):.2f}"  # RMSE with 2 decimal places
+            'RMSE': f"{np.sqrt(mean_squared_error(ts, fitted_values)):.2f}"  # RMSE with 2 decimal places
         }
         diagnostics.append(metrics)
 
@@ -373,14 +374,14 @@ def check_diagnostics(n_clicks, start_year, end_year, diff_order, selected_regio
         },
         style_data_conditional=[
             {
-                'if': {'state': 'hover'},  # Apply style on hover
+                'if': {'state': 'active'},  # Apply style on hover
                 'backgroundColor': 'rgba(20, 50, 60, 0.8)',  # Dark teal shade to complement the gradient background
                 'color': '#E0FFFF',  # Light text color to ensure readability on hover
             },
         ],
         style_header_conditional=[
             {
-                'if': {'state': 'hover'},  # Apply style on hover
+                'if': {'state': 'active'},  # Apply style on hover
                 'backgroundColor': 'rgba(20, 50, 60, 0.8)',  # Dark teal shade to complement the gradient background
                 'color': '#E0FFFF',  # Light text color to ensure readability on hover
             },

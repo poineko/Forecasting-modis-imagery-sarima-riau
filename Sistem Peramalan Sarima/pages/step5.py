@@ -1,3 +1,4 @@
+import io
 #  Step 5
 
 import dash
@@ -114,7 +115,7 @@ def predict_(p, q, P, Q, n_offset, n_timetype, selected_region_data, diff_order,
         return go.Figure(layout=my_figlayout)
 
     try:
-        data = pd.read_json(selected_region_data)
+        data = pd.read_json(io.StringIO(selected_region_data))
     except ValueError:
         return "Error: `selected_region_data` is not in JSON format."
     
@@ -227,7 +228,7 @@ def predict_original(n_clicks, p, q, P, Q, n_offset, n_timetype, selected_region
         return go.Figure(layout=my_figlayout), "Data tidak tersedia"
     
     try:
-        data = pd.read_json(selected_region_data)
+        data = pd.read_json(io.StringIO(selected_region_data))
     except ValueError:
         return go.Figure(layout=my_figlayout), "Error: `selected_region_data` is not in JSON format."
     
@@ -325,7 +326,7 @@ def predict_original(n_clicks, p, q, P, Q, n_offset, n_timetype, selected_region
             },
             style_data_conditional=[
                 {
-                    'if': {'state': 'hover'},  
+                    'if': {'state': 'active'},  
                     'backgroundColor': 'rgba(20, 50, 60, 0.8)',  
                     'color': '#E0FFFF',  
                 },

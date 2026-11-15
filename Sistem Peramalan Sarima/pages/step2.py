@@ -1,3 +1,4 @@
+import io
 # step2.py
 
 import dash
@@ -47,7 +48,7 @@ layout = dbc.Container([
 )
 def update_stationarity_check(selected_region_data, diff_order):
     if selected_region_data:
-        data = pd.read_json(selected_region_data)
+        data = pd.read_json(io.StringIO(selected_region_data))
         data.set_index('Tanggal', inplace=True)
     else:
         return "No data", "No data", "No data", go.Figure(), go.Figure()
